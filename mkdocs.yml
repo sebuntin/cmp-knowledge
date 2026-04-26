@@ -1,0 +1,129 @@
+site_name: CMP 融合渲染知识库
+site_description: Compose for HarmonyOS (CMP) 融合渲染架构技术文档
+site_url: https://sebuntin.github.io/cmp-knowledge/
+repo_url: https://github.com/sebuntin/cmp-knowledge
+repo_name: cmp-knowledge
+edit_uri: edit/main/
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+docs_dir: docs
+site_dir: site
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\-\.]+'
+  - tags
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+
+nav:
+  - 首页: README.md
+  - 概念:
+    - wiki/concepts/融合渲染架构.md
+    - wiki/concepts/SkPicture与脏区管理.md
+    - wiki/concepts/OH_Drawing命令转换.md
+    - wiki/concepts/ContentModifier挂载机制.md
+    - wiki/concepts/RenderNode生命周期.md
+    - wiki/concepts/Messenger通信机制.md
+    - wiki/concepts/SubcomposeLayout与懒组合.md
+    - wiki/concepts/LazyColumn vs Column 选型决策.md
+  - 实体:
+    - wiki/entities/OHRenderNode.md
+    - wiki/entities/SkPictureRecorder.md
+    - wiki/entities/SkCanvas.md
+    - wiki/entities/ComposeSceneDragAndDropNode.md
+    - wiki/entities/HarmonyOSDragAndDropManager.md
+    - wiki/entities/DragAndDropProxy.md
+  - 源文档摘要:
+    - wiki/sources/src-CMP融合渲染架构设计文档.md
+    - wiki/sources/src-Canvas生命周期详解.md
+    - wiki/sources/src-Coil图片解码与零拷贝优化方案.md
+    - wiki/sources/src-coil+skia自渲染解码原理.md
+    - wiki/sources/src-ComposeUI与ArkUI混排原理.md
+    - wiki/sources/src-applyChanges_unwind_backtrace_analysis.md
+    - wiki/sources/src-图解NodeCoordinator.md
+    - wiki/sources/src-渲染模式隔离架构设计文档.md
+    - wiki/sources/src-融合渲染全阶段拆解.md
+    - wiki/sources/src-融合渲染整体方案总结.md
+    - wiki/sources/src-LazyColumn与Column原理及性能对比分析.md
+  - 分析:
+    - wiki/analysis/analysis-DragAndDrop在OHOS平台的实现.md
+  - 原始文档:
+    - raw/CMP帧时钟协作机制.md
+    - raw/Canvas生命周期详解.md
+    - raw/Coil图片解码与零拷贝优化方案.md
+    - raw/coil+skia自渲染解码原理.md
+    - raw/ComposeUI与ArkUI混排原理.md
+    - raw/applyChanges_unwind_backtrace_analysis.md
+    - raw/图解NodeCoordinator.md
+    - raw/渲染模式隔离架构设计文档.md
+    - raw/融合渲染全阶段拆解.md
+    - raw/融合渲染整体方案总结.md
+    - raw/LazyColumn 与 Column 原理及性能对比分析.md
+    - raw/OHOS SkiaRenderer渲染管线设计.md
+    - raw/自渲染ArkUI原生组件混排设计.md

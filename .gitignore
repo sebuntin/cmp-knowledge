@@ -1,1 +1,6 @@
 .obsidian/workspace.json
+site/
+docs/
+.venv/
+__pycache__/
+*.pyc
