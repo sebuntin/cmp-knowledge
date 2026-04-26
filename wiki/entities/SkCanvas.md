@@ -2,7 +2,7 @@
 type: entity
 category: C++ 类
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 sources:
   - CMP融合渲染架构设计文档.md
 tags:
@@ -52,9 +52,12 @@ SkCanvas 是 Skia 的绘制画布类，在融合渲染中包装了 `OH_Drawing_C
 
 ```cpp
 operator OH_Drawing_Canvas*() const {
-    return fDrawingCanvas;  // 透明访问内部 OH_Drawing_Canvas
+    initDrawingCanvas();    // 确保 OH_Drawing_Canvas 已初始化
+    return fDrawingCanvas;
 }
 ```
+
+注意：转换前会调用 `initDrawingCanvas()` 确保内部画布就绪，不是简单的透明访问。
 
 ## 关键成员
 

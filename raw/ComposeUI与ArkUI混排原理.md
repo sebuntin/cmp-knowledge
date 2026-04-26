@@ -2,15 +2,16 @@
 
 # **ArkUIView Compose 混排原理与示例说明**
 
-本文梳理 `androidx.compose.ui.interop.ArkUIView.ohos.kt` 中 `InternalArkUIViewV2` 的关键流程，并结合 `composeApp/src/ohosArm64Main/kotlin/com/tencent/compose/sample/video/VideoPlayer.kt` 演示 ArkUI 视图与 Compose 内容混排的使用方式。
-
-![https://docimg3.docs.qq.com/image/AgAAEbEDSvoo7Bp4XMtLtrCjozU08ivi.png?w=2226&h=1618](https://docimg3.docs.qq.com/image/AgAAEbEDSvoo7Bp4XMtLtrCjozU08ivi.png?w=2226&h=1618)
+本文梳理 `androidx.compose.ui.interop.ArkUIView.ohos.kt` 中 `InternalArkUIViewV2` 的关
+键流程，并结合 
+`composeApp/src/ohosArm64Main/kotlin/com/tencent/compose/sample/video/VideoPlayer.kt` 演示 ArkUI 视图与 Compose 内容混排的使用方式。
 
 ------
 
 ## **1.** `InternalArkUIViewV2` **结构概览（Kotlin 层）**
 
-源文件：`compose/ui/ui/src/ohosArm64Main/kotlin/androidx/compose/ui/interop/ArkUIView.ohos.kt`
+源文件：
+`compose/ui/ui/src/ohosArm64Main/kotlin/androidx/compose/ui/interop/ArkUIView.ohos.kt`
 
 核心入口：`@Composable internal fun InternalArkUIViewV2(...)`（127-307 行）
 
@@ -70,7 +71,8 @@ val embeddedInteropComponent = remember { EmbeddedInteropForArkUINode(...) }
 
 ## **2.** `VideoPlayer` **Demo（Compose 用法）**
 
-文件：`composeApp/src/ohosArm64Main/kotlin/com/tencent/compose/sample/video/VideoPlayer.kt`
+文件：
+`composeApp/src/ohosArm64Main/kotlin/com/tencent/compose/sample/video/VideoPlayer.kt`
 
 ```
 package com.tencent.compose.video

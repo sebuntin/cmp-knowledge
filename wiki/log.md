@@ -39,3 +39,40 @@
 - **渲染模式隔离架构设计文档**：三层隔离（构建层/运行时策略层/ArkTS 分发层）、BackendId 全链路传递、六个策略接口、逃生通道机制
 - **融合渲染全阶段拆解**：四棵树七阶段渲染管线、手势处理占 12.71% 为第二大成本、Kotlin 绘制仅占 1.79%、重组优化 94%、doMeasureAndLayout 每帧调用两次
 - **融合渲染整体方案总结**：四层架构渲染管线、双模式决策逻辑、嵌套录制机制、GraphicsLayer 属性分类、五项性能优化
+
+---
+
+## [2026-04-20] query | DragAndDrop 在 OHOS 平台的实现分析
+
+**操作类型**: query（代码探索 → 分析页）
+**描述**: 通过代码探索分析 DragAndDrop 在 OHOS 平台的完整实现，创建 1 个分析页、1 个概念页、3 个实体页。
+**影响页面**: analysis-DragAndDrop在OHOS平台的实现.md, Messenger通信机制.md, ComposeSceneDragAndDropNode.md, HarmonyOSDragAndDropManager.md, DragAndDropProxy.md, index.md, log.md
+**详情**:
+- **分析页**：四层架构（Compose API → 事件分发 → Kotlin 平台管理 → ArkTS 原生桥接）、Messenger 5 种消息类型、完整数据流图
+- **概念页**：Messenger 通信机制（Kotlin-ArkTS 双向 JSON 通道）
+- **实体页**：ComposeSceneDragAndDropNode（事件分发入口）、HarmonyOSDragAndDropManager（预览图生成+状态管理）、DragAndDropProxy（OHOS dragController API 调用）
+- 来源：代码探索分析（非 raw/ 源文档），基于直接阅读 Kotlin 和 ArkTS 源码
+
+---
+
+## [2026-04-20] ingest | LazyColumn 与 Column 原理及性能对比分析
+
+**操作类型**: ingest
+**描述**: 录入 LazyColumn 与 Column 原理及性能对比分析（11 章）。提取 6 个关键发现，创建 1 个源文档摘要页、2 个概念页。
+**影响页面**: src-LazyColumn与Column原理及性能对比分析.md, SubcomposeLayout与懒组合.md, LazyColumn vs Column 选型决策.md, index.md, log.md
+**详情**:
+- **源文档摘要页**：6 个关键发现——LazyColumn 是组合控制器而非回收列表、SubcomposeLayout 打破阶段分离、首帧无懒加载优势、item.key 四个作用、CMP 单线程放大效应、<20 项应用 Column
+- **概念页**：SubcomposeLayout 与懒组合（测量阶段触发组合的机制与代价）、LazyColumn vs Column 选型决策（决策树与首帧优化策略）
+
+---
+
+## [2026-04-20] lint | Wiki 内容与代码一致性检查
+
+**操作类型**: lint
+**描述**: 对 Wiki 所有实体页和概念页与当前代码进行交叉验证。
+**影响页面**: SkCanvas.md, OH_Drawing命令转换.md
+**详情**:
+- **已修正错误 1**：`SkCanvas` 实体页中 `operator OH_Drawing_Canvas*()` 描述错误。Wiki 写的是 `return fDrawingCanvas;`（透明访问），实际代码会先调用 `initDrawingCanvas()` 确保画布就绪
+- **已修正错误 2**：`OH_Drawing命令转换` 概念页中使用了不存在的函数名 `convertPaintToPen`。实际 Paint 转换通过 `attachPaint(paint)` + `detachPaint()` 实现
+- **已修正错误 3**：`OH_Drawing命令转换` 概念页中转换运算符同样遗漏了 `initDrawingCanvas()` 调用
+- **验证通过**：OHRenderNode（方法/成员变量准确）、SkPictureRecorder（录制流程准确）、RenderNode生命周期（状态标志准确）、ContentModifier挂载机制（决策逻辑准确）、SkPicture与脏区管理（脏区机制准确）、DragAndDrop 相关页面（5 页全部准确）、源文档摘要页（4 篇抽样全部准确）

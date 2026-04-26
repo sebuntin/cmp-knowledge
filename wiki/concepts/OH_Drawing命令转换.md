@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 sources:
   - CMP融合渲染架构设计文档.md
 tags:
@@ -31,8 +31,9 @@ OH_Drawing 命令转换是将 Skia 的 Canvas 绘制操作（drawRect、drawPath
 
 ```
 SkCanvas.drawRect(rect, paint)
-  → convertPaintToPen(paint)        — SkPaint 转 OH_Drawing_Pen
+  → attachPaint(paint)              — SkPaint → OH_Drawing_Pen
   → OH_Drawing_CanvasDrawRect()     — 记录到 RecordCmd
+  → detachPaint()                   — 清理 Pen
   → markDrawBounds(rect, paint)     — 同时更新脏区
 ```
 
@@ -67,11 +68,12 @@ Create() → BeginRecording() → [绘制操作] → FinishRecording() → Destr
 
 ### SkCanvas 转换运算符
 
-SkCanvas 包装了 `OH_Drawing_Canvas*`，通过转换运算符透明传递：
+SkCanvas 包装了 `OH_Drawing_Canvas*`，通过转换运算符提供访问（会先调用 `initDrawingCanvas()` 确保画布就绪）：
 
 ```cpp
 operator OH_Drawing_Canvas*() const {
-    return fDrawingCanvas;  // 直接返回内部 OH_Drawing_Canvas
+    initDrawingCanvas();    // 确保 OH_Drawing_Canvas 已初始化
+    return fDrawingCanvas;
 }
 ```
 
