@@ -1,5 +1,7 @@
 ---
 type: source
+created: 2026-04-19
+updated: 2026-04-19
 source_file: raw/渲染模式隔离架构设计文档.md
 ingested: 2026-04-19
 tags:

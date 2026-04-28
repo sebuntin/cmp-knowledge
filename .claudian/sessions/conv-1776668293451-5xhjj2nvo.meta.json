@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776668293451-5xhjj2nvo",
+  "providerId": "claude",
+  "title": "Generate README for Vault project",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776668293453,
+  "updatedAt": 1777251603416,
+  "lastResponseAt": 1776668844992,
+  "sessionId": "ff2c8863-f208-4433-bf48-50f8c8dc5fd1",
+  "providerState": {
+    "providerSessionId": "ff2c8863-f208-4433-bf48-50f8c8dc5fd1"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

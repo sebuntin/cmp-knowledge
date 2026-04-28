@@ -12,7 +12,7 @@ sources:
 related:
   - "[[HarmonyOSDragAndDropManager]]"
   - "[[DragAndDropProxy]]"
-  - "[[DragAndDropNode]]"
+  - "[[analysis-DragAndDrop在OHOS平台的实现]]"
 ---
 
 # ComposeSceneDragAndDropNode

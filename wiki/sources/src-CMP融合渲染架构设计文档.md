@@ -1,6 +1,8 @@
 ---
 type: source
-source_file: CMP融合渲染架构设计文档.md
+created: 2026-04-19
+updated: 2026-04-19
+source_file: docs/CMP融合渲染架构设计文档.md（未存入 raw/）
 ingested: 2026-04-19
 tags:
   - CMP
@@ -65,7 +67,7 @@ Compose UI 绘制 (@Composable)
 
 ## 与已有知识的关联
 
-- 本文档是融合渲染路径的核心参考，与 [[渲染模式隔离架构设计文档]] 中的架构描述互补
+- 本文档是融合渲染路径的核心参考，与 [[src-渲染模式隔离架构设计文档]] 中的架构描述互补
 - [[SkPicture与脏区管理]] 和 [[OH_Drawing命令转换]] 深入展开本文档第二、三章内容
 - [[ContentModifier挂载机制]] 深入展开第四章内容
 

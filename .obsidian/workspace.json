@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "79749006ef43be17",
+    "id": "2424c0d24884ef4b",
     "type": "split",
     "children": [
       {
-        "id": "33c64e3d6b7aa4a1",
+        "id": "d66904d55ce9d25b",
         "type": "tabs",
         "children": [
           {
-            "id": "69c0db0462970d87",
+            "id": "af7330a9eecc6e7d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "Clippings/一文看透 Kotlin 协程本质.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "一文看透 Kotlin 协程本质"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8d87f450d07fc18b",
+    "id": "c50ce0330fdef4c4",
     "type": "split",
     "children": [
       {
-        "id": "ba95b787bb676a46",
+        "id": "65d8bff469dfe07e",
         "type": "tabs",
         "children": [
           {
-            "id": "c1f44f1286d9e515",
+            "id": "c1bde05e44d3b46c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "7be4b10a3d59a169",
+            "id": "33a31940ca39094b",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,66 +61,68 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜索"
+              "title": "Search"
             }
           },
           {
-            "id": "91579e1925b2de66",
+            "id": "4a177139d75ba60f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "书签"
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 312.5024719238281
+    "width": 396.5
   },
   "right": {
-    "id": "25b6eca80e7e235a",
+    "id": "317f2ad09f0fd6f8",
     "type": "split",
     "children": [
       {
-        "id": "66b4f06866a79801",
+        "id": "38fe49da65fd27d5",
         "type": "tabs",
         "children": [
           {
-            "id": "567dbe19f9e15f96",
+            "id": "1802f58b63923714",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Clippings/一文看透 Kotlin 协程本质.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "Backlinks for 一文看透 Kotlin 协程本质"
             }
           },
           {
-            "id": "9892b4fefbb24845",
+            "id": "c9559d3048613969",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Clippings/一文看透 Kotlin 协程本质.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Outgoing links from 一文看透 Kotlin 协程本质"
             }
           },
           {
-            "id": "d2f903bce596c27f",
+            "id": "fed0b701e817cd06",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,11 +133,11 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "标签"
+              "title": "Tags"
             }
           },
           {
-            "id": "fd3fbdec8badeb46",
+            "id": "8f0ecf4147f78e4b",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -145,25 +147,36 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "添加笔记属性"
+              "title": "All properties"
             }
           },
           {
-            "id": "3dd6109fd71c6b79",
+            "id": "a7ce58335ba85b88",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Clippings/一文看透 Kotlin 协程本质.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Outline of 一文看透 Kotlin 协程本质"
             }
           },
           {
-            "id": "6597b17139e0af44",
+            "id": "bd02dd80d51511eb",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          },
+          {
+            "id": "aba5fa1b55206104",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -173,13 +186,13 @@
             }
           },
           {
-            "id": "bb54a1026b35acbe",
+            "id": "b9a9a004124c85b8",
             "type": "leaf",
             "state": {
-              "type": "claudian-view",
+              "type": "graph",
               "state": {},
-              "icon": "bot",
-              "title": "Claudian"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
@@ -187,7 +200,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 625.5
+    "width": 360.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,48 +212,48 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false,
-      "claudian:Open Claudian": false
+      "claudian:Open Claudian": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "69c0db0462970d87",
+  "active": "af7330a9eecc6e7d",
   "lastOpenFiles": [
-    "wiki/sources/src-图解NodeCoordinator.md",
-    "wiki/sources/src-融合渲染整体方案总结.md",
-    "wiki/sources/src-融合渲染全阶段拆解.md",
-    "wiki/使用指南.md",
-    "wiki/entities/SkPictureRecorder.md",
-    "wiki/concepts/SkPicture与脏区管理.md",
-    "wiki/sources/src-CMP融合渲染架构设计文档.md",
-    "wiki/concepts/融合渲染架构.md",
-    "wiki/entities/OHRenderNode.md",
-    "wiki/entities/SkCanvas.md",
-    "CMP融合渲染架构设计文档.md",
-    "cmp_proj_db.base",
-    "wiki/log.md",
-    "wiki/src-Coil图片解码与零拷贝优化方案.md",
-    "wiki/concepts/RenderNode生命周期.md",
+    "raw/Kotlin Jetpack 实战  09. 图解协程原理.md",
+    "Clippings/一文看透 Kotlin 协程本质.md",
+    "Clippings",
+    "raw/融合渲染全阶段拆解.md",
+    "wiki/analysis/analysis-FusionRenderer渲染数据流全景.md",
+    "wiki/analysis/analysis-DragAndDrop在OHOS平台的实现.md",
+    "wiki/analysis/analysis-帧时钟在两种渲染路径中的差异.md",
+    "wiki/analysis/analysis-性能优化体系.md",
+    "wiki/concepts/LazyColumn vs Column 选型决策.md",
     "wiki/concepts/ContentModifier挂载机制.md",
-    "wiki/concepts/OH_Drawing命令转换.md",
-    "wiki/sources/src-渲染模式隔离架构设计文档.md",
-    "wiki/sources/src-coil+skia自渲染解码原理.md",
-    "wiki/sources/src-applyChanges_unwind_backtrace_analysis.md",
-    "wiki/sources/src-ComposeUI与ArkUI混排原理.md",
-    "wiki/sources/src-Coil图片解码与零拷贝优化方案.md",
-    "wiki/sources/src-Canvas生命周期详解.md",
-    "wiki/entities",
-    "wiki/concepts",
-    "wiki/sources",
-    "CLAUDE.md",
-    "wiki/src-融合渲染全阶段拆解.md",
-    "wiki/src-渲染模式隔离架构设计文档.md",
-    "wiki/src-融合渲染整体方案总结.md",
-    "wiki",
-    "raw/assets",
-    "raw",
-    "claudian-2.0.3.zip",
-    "未确认 139254.crdownload",
-    "未命名.canvas",
-    "Coil零拷贝优化方案.pptx"
+    "wiki/concepts/Composable本质.md",
+    "wiki/concepts/SideEffect机制.md",
+    "wiki/index.md",
+    "wiki/concepts/布局流程.md",
+    "wiki/concepts/图解协程原理.md",
+    "wiki/sources/src-图解协程原理.md",
+    "wiki/sources/src-深入理解LayoutModifier.md",
+    "wiki/concepts/LayoutModifier机制.md",
+    "wiki/concepts/DrawModifier机制.md",
+    "wiki/sources/src-一文看懂Compose布局流程.md",
+    "wiki/sources/src-深入理解DrawModifier.md",
+    "wiki/sources/src-揭秘Composable的本质.md",
+    "wiki/sources/src-Compose附带效应一探究竟.md",
+    "CMP融合渲染架构设计文档.md",
+    "Clippings/Kotlin Jetpack 实战  09. 图解协程原理.md",
+    "raw/一文看懂 Jetapck Compose 布局流程.md",
+    "raw/深入理解 Jetpack Compose LayoutModifier.md",
+    "site/search/search_index.json",
+    "site/search",
+    "site/wiki/sources/src-融合渲染整体方案总结/index.html",
+    "site/wiki/sources/src-融合渲染整体方案总结",
+    "site/wiki/sources/src-融合渲染全阶段拆解/index.html",
+    "site/wiki/sources/src-融合渲染全阶段拆解",
+    "site/wiki/sources/src-渲染模式隔离架构设计文档/index.html",
+    "site/wiki/sources/src-渲染模式隔离架构设计文档",
+    "site/wiki/sources/src-图解NodeCoordinator/index.html",
+    "site/assets/images/favicon.png"
   ]
 }

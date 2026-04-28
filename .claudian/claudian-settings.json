@@ -1,7 +1,7 @@
 {
   "userName": "",
   "permissionMode": "yolo",
-  "model": "opus",
+  "model": "opus[1m]",
   "thinkingBudget": "medium",
   "effortLevel": "high",
   "serviceTier": "default",
@@ -30,9 +30,9 @@
       "loadUserSettings": true,
       "enableChrome": false,
       "enableBangBash": false,
-      "enableOpus1M": false,
+      "enableOpus1M": true,
       "enableSonnet1M": false,
-      "lastModel": "opus",
+      "lastModel": "opus[1m]",
       "environmentVariables": "",
       "environmentHash": ""
     },
@@ -44,15 +44,15 @@
       "reasoningSummary": "detailed",
       "environmentVariables": "",
       "environmentHash": "",
-      "installationMethod": "native-windows",
-      "installationMethodsByHost": {},
-      "wslDistroOverride": "",
+      "installationMethodsByHost": {
+        "shiqideMacBook-Pro.local": "native-windows"
+      },
       "wslDistroOverridesByHost": {}
     }
   },
   "settingsProvider": "claude",
   "savedProviderModel": {
-    "claude": "opus"
+    "claude": "opus[1m]"
   },
   "savedProviderEffort": {
     "claude": "high"

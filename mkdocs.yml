@@ -92,6 +92,9 @@ nav:
     - wiki/concepts/Messenger通信机制.md
     - wiki/concepts/SubcomposeLayout与懒组合.md
     - wiki/concepts/LazyColumn vs Column 选型决策.md
+    - wiki/concepts/帧时钟协作机制.md
+    - wiki/concepts/SkiaRenderer渲染管线.md
+    - wiki/concepts/三明治混排结构.md
   - 实体:
     - wiki/entities/OHRenderNode.md
     - wiki/entities/SkPictureRecorder.md
@@ -99,6 +102,8 @@ nav:
     - wiki/entities/ComposeSceneDragAndDropNode.md
     - wiki/entities/HarmonyOSDragAndDropManager.md
     - wiki/entities/DragAndDropProxy.md
+    - wiki/entities/ComposeSceneRender.md
+    - wiki/entities/XComponentRender.md
   - 源文档摘要:
     - wiki/sources/src-CMP融合渲染架构设计文档.md
     - wiki/sources/src-Canvas生命周期详解.md
@@ -111,8 +116,14 @@ nav:
     - wiki/sources/src-融合渲染全阶段拆解.md
     - wiki/sources/src-融合渲染整体方案总结.md
     - wiki/sources/src-LazyColumn与Column原理及性能对比分析.md
+    - wiki/sources/src-CMP帧时钟协作机制.md
+    - wiki/sources/src-OHOS SkiaRenderer渲染管线设计.md
+    - wiki/sources/src-自渲染ArkUI原生组件混排设计.md
   - 分析:
     - wiki/analysis/analysis-DragAndDrop在OHOS平台的实现.md
+    - wiki/analysis/analysis-FusionRenderer与SkiaRenderer渲染路径对比.md
+    - wiki/analysis/analysis-两种渲染路径的混排机制对比.md
+    - wiki/analysis/analysis-帧时钟在两种渲染路径中的差异.md
   - 原始文档:
     - raw/CMP帧时钟协作机制.md
     - raw/Canvas生命周期详解.md

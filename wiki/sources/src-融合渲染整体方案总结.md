@@ -1,5 +1,7 @@
 ---
 type: source
+created: 2026-04-19
+updated: 2026-04-19
 source_file: raw/融合渲染整体方案总结.md
 ingested: 2026-04-19
 tags:

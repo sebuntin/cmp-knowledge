@@ -204,10 +204,10 @@ Frame 3: flush(N effect) -> flush(1 recompose) -> sendFrame -> recompose + anim 
 
 系统中存在两个独立的 `BroadcastFrameClock`，形成两级帧传播：
 
-| Instance | Created at | Consumer | Who calls sendFrame |
-|----------|-----------|----------|-------------------|
-| BaseComposeScene.frameClock | BaseComposeScene.skiko.kt:73 | Recomposer's parentFrameClock.withFrameNanos | render() Phase 3 |
-| Recomposer.broadcastFrameClock | Recomposer.kt:167 | User effect coroutine's withFrameNanos | Recomposer's onFrame |
+| Instance                       | Created at                   | Consumer                                     | Who calls sendFrame  |
+| ------------------------------ | ---------------------------- | -------------------------------------------- | -------------------- |
+| BaseComposeScene.frameClock    | BaseComposeScene.skiko.kt:73 | Recomposer's parentFrameClock.withFrameNanos | render() Phase 3     |
+| Recomposer.broadcastFrameClock | Recomposer.kt:167            | User effect coroutine's withFrameNanos       | Recomposer's onFrame |
 
 为什么需要两级？因为**控制权不同**：
 - BaseComposeScene.frameClock 的 `sendFrame` 由 `render()` 调用，**只在有 VSync 帧时触发**
@@ -284,10 +284,10 @@ private val scope = CoroutineScope(incomingScope.coroutineContext.minusKey(Job))
 
 #### 在帧循环中的角色
 
-| Timing | Dominant path | Reason |
-|--------|-------------|--------|
-| In-frame (render() running) | Path A | flush() executes synchronously, Path B blocked by runLock then skips |
-| Between frames (no render) | Path B | Tasks execute via OhosUiDispatcher on main thread |
+| Timing                      | Dominant path | Reason                                                               |
+| --------------------------- | ------------- | -------------------------------------------------------------------- |
+| In-frame (render() running) | Path A        | flush() executes synchronously, Path B blocked by runLock then skips |
+| Between frames (no render)  | Path B        | Tasks execute via OhosUiDispatcher on main thread                    |
 
 帧间路径 B 的典型场景：
 
