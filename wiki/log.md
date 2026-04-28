@@ -76,3 +76,80 @@
 - **已修正错误 2**：`OH_Drawing命令转换` 概念页中使用了不存在的函数名 `convertPaintToPen`。实际 Paint 转换通过 `attachPaint(paint)` + `detachPaint()` 实现
 - **已修正错误 3**：`OH_Drawing命令转换` 概念页中转换运算符同样遗漏了 `initDrawingCanvas()` 调用
 - **验证通过**：OHRenderNode（方法/成员变量准确）、SkPictureRecorder（录制流程准确）、RenderNode生命周期（状态标志准确）、ContentModifier挂载机制（决策逻辑准确）、SkPicture与脏区管理（脏区机制准确）、DragAndDrop 相关页面（5 页全部准确）、源文档摘要页（4 篇抽样全部准确）
+
+---
+
+## [2026-04-26] ingest | raw/ 新增文档批量录入（3 个文档）
+
+**操作类型**: ingest
+**描述**: 录入 raw/ 目录下 3 个新增文档，创建 3 个源文档摘要页、3 个概念页、2 个实体页。
+**影响页面**: src-CMP帧时钟协作机制.md, src-OHOS SkiaRenderer渲染管线设计.md, src-自渲染ArkUI原生组件混排设计.md, 帧时钟协作机制.md, SkiaRenderer渲染管线.md, 三明治混排结构.md, ComposeSceneRender.md, XComponentRender.md, index.md, log.md
+**详情**:
+- **CMP帧时钟协作机制**：两级 BroadcastFrameClock 级联、FlushCoroutineDispatcher 双路径 dispatch、render() 六阶段流程、协程上下文组装
+- **OHOS SkiaRenderer渲染管线设计**：SkiaLayer 空壳、6 个策略接口隔离、ComposeSceneRender 三种绘制模式、EGL 资源分层、尺寸通知迂回路径
+- **自渲染ArkUI原生组件混排设计**：三明治五层叠放、InteropContainer 三层选择、BACK 层挖洞机制、PasteButton 免权限集成
+- **新增概念页**：帧时钟协作机制、SkiaRenderer渲染管线、三明治混排结构
+- **新增实体页**：ComposeSceneRender（Kotlin Skia GPU 管线）、XComponentRender（C++ EGL 上下文管理）
+
+---
+
+## [2026-04-27] analysis | 三篇跨文档对比分析
+
+**操作类型**: analysis
+**描述**: 基于已有概念页和源文档摘要页，创建 3 篇跨文档对比分析页。
+**影响页面**: analysis-FusionRenderer与SkiaRenderer渲染路径对比.md, analysis-两种渲染路径的混排机制对比.md, analysis-帧时钟在两种渲染路径中的差异.md, index.md, log.md
+**详情**:
+- **渲染路径对比**：架构层、帧循环、Surface 管理、策略接口六维度全量对比，识别 FusionRenderer 拉模型 vs SkiaRenderer 推模型的本质差异
+- **混排机制对比**：内嵌式混排（FusionRenderer RenderNode 直接嵌入 ArkUI 树）vs 叠层式混排（SkiaRenderer 三明治五层 Stack + 挖洞），分析挖洞的必要性和选择建议
+- **帧时钟差异**：帧时钟内核（两级级联 + 双路径 dispatch + 六阶段）完全共用，外壳差异集中在帧触发方式、后台心跳、EGL 绘制包装
+
+---
+
+## [2026-04-27] lint | Wiki 内容整理
+
+**操作类型**: lint
+**描述**: 全量检查 Wiki 内容一致性，修复断裂 wikilink、补充缺失 frontmatter、标记未录入 raw 文件。
+**影响页面**: 使用指南.md, ComposeSceneDragAndDropNode.md, src-CMP融合渲染架构设计文档.md, src-CMP鸿蒙化规范对齐模板.md, 所有 source 页 frontmatter, index.md, log.md
+**详情**:
+- **修复 4 个断裂 wikilink**：使用指南的 `[[CLAUDE.md]]`、src-CMP融合渲染架构设计文档的 `[[渲染模式隔离架构设计文档]]`（缺 src- 前缀）、src-CMP鸿蒙化规范对齐模板的 `[[FusionRenderer与SkiaRenderer渲染路径对比]]`（缺 analysis- 前缀）、ComposeSceneDragAndDropNode 的 `[[DragAndDropNode]]`（无对应页面，改为指向分析页）
+- **修正 source 引用**：src-CMP融合渲染架构设计文档 的 source_file 标注为 docs/ 路径（原始文档未存入 raw/）
+- **补充 frontmatter**：所有 15 个 source 页补充 `created` 和 `updated` 字段（取 ingested 日期）
+- **标记未录入 raw 文件**：index.md 新增"待录入"节，标记 `Compose_OHOS_手势事件处理剖析.md`（~32KB）和 `MonotonicFrameClock_Injection_Chain.md`（~3KB）
+
+---
+
+## [2026-04-27] ingest | 2 个 raw 文档录入
+
+**操作类型**: ingest
+**描述**: 录入剩余 2 个 raw 文档，创建 2 个源文档摘要页、1 个概念页，更新相关页面交叉引用。
+**影响页面**: src-MonotonicFrameClock_Injection_Chain.md, src-Compose_OHOS_手势事件处理剖析.md, 手势事件处理机制.md, 帧时钟协作机制.md, 融合渲染架构.md, index.md, log.md
+**详情**:
+- **MonotonicFrameClock_Injection_Chain**：分析 withFrameNanos 通过 CoroutineContext 依赖注入找到 BroadcastFrameClock 的 5 步链路，补充了帧时钟协作机制"Why"层面的理解
+- **Compose_OHOS_手势事件处理剖析**：触摸事件六阶段链路（ArkTS→NAPI→Kotlin→策略分发→事件转换→Compose 处理），两种渲染路径 InputStrategy 差异、多指追踪、GC 抑制
+- **新增概念页**：手势事件处理机制（六阶段链路、事件转换核心、关键优化）
+- **交叉引用更新**：帧时钟协作机制添加 MonotonicFrameClock 注入链关联、融合渲染架构添加手势事件关联
+- **index.md 更新**：移除待录入标记，统计更新为 12 概念 + 17 源文档 = 41 页
+
+---
+
+## [2026-04-27] analysis | 三篇跨主题综合分析
+
+**操作类型**: analysis
+**描述**: 识别知识库中跨多个概念/实体页但缺乏综合分析的复杂主题，创建 3 篇综合分析页。
+**影响页面**: analysis-FusionRenderer渲染数据流全景.md, analysis-跨语言通信架构.md, analysis-性能优化体系.md, index.md, log.md
+**详情**:
+- **FusionRenderer 渲染数据流全景**：综合 5 概念页 + 3 实体页，追踪 @Composable 到像素的五次格式转换、三层脏区传递、Picture/Node 模式完整决策路径、帧循环时序对应关系
+- **跨语言通信架构**：提炼三种通信机制（NAPI 直接调用 / Messenger JSON / KN cinterop）的适用场景、调用链路、选择决策和关键约束（线程安全、链接约束、导入约束）
+- **性能优化体系**：按渲染管线阶段组织六项优化策略（重组跳过 94%、Picture 缓存、懒组合、脏区管理 + 节点复用、GC 抑制、applyChanges 栈回溯），分析策略间的增强和冲突关系，提供瓶颈定位指南
+
+## [2026-04-28] ingest | Clippings 6 篇文章批量录入
+
+**操作类型**: ingest
+**描述**: 将 Clippings 目录下 6 篇 Compose 基础知识文章录入 wiki
+**影响页面**: index.md, log.md, 6 个 source 页, 6 个 concept 页
+**详情**:
+- **源文档移动**：Clippings/ → raw/，Clippings 目录已清空删除
+- **新建 6 个源文档摘要页**：src-图解协程原理、src-Compose附带效应一探究竟、src-揭秘Composable的本质、src-深入理解DrawModifier、src-深入理解LayoutModifier、src-一文看懂Compose布局流程
+- **新建 6 个概念页**：图解协程原理、SideEffect机制、Composable本质、DrawModifier机制、LayoutModifier机制、布局流程
+- **index.md 更新**：概念 12→18，源文档 17→23，总页数 44→56
+- 每个概念页均建立了与已有 wiki 页面的交叉引用（帧时钟协作机制、融合渲染架构等）
