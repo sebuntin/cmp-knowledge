@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clippings/一文看透 Kotlin 协程本质.md",
+                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "一文看透 Kotlin 协程本质"
+              "title": "Ghostty 终端默认快捷键列表"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 396.5
+    "width": 444.5
   },
   "right": {
     "id": "317f2ad09f0fd6f8",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Clippings/一文看透 Kotlin 协程本质.md",
+                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 一文看透 Kotlin 协程本质"
+              "title": "Backlinks for Ghostty 终端默认快捷键列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Clippings/一文看透 Kotlin 协程本质.md",
+                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 一文看透 Kotlin 协程本质"
+              "title": "Outgoing links from Ghostty 终端默认快捷键列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Clippings/一文看透 Kotlin 协程本质.md",
+                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 一文看透 Kotlin 协程本质"
+              "title": "Outline of Ghostty 终端默认快捷键列表"
             }
           },
           {
@@ -196,12 +196,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 360.5,
-    "collapsed": true
+    "width": 359.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -216,44 +215,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af7330a9eecc6e7d",
+  "active": "c1bde05e44d3b46c",
   "lastOpenFiles": [
-    "raw/Kotlin Jetpack 实战  09. 图解协程原理.md",
+    "wiki/concepts/performance/LazyColumn vs Column 选型决策.md",
+    "wiki/concepts/performance/SubcomposeLayout与懒组合.md",
+    "wiki/concepts/performance/帧时钟协作机制.md",
+    "wiki/concepts/platform/三明治混排结构.md",
+    "wiki/concepts/platform/手势事件处理机制.md",
+    "wiki/concepts/platform/Messenger通信机制.md",
+    "wiki/concepts/compose-basics/布局流程.md",
+    "wiki/concepts/compose-basics/LayoutModifier机制.md",
+    "wiki/concepts/compose-basics/DrawModifier机制.md",
+    "wiki/concepts/compose-basics/Composable本质.md",
+    "wiki/concepts/compose-basics/SideEffect机制.md",
+    "wiki/concepts/compose-basics/图解协程原理.md",
+    "wiki/concepts/rendering/SkiaRenderer渲染管线.md",
+    "wiki/concepts/rendering/RenderNode生命周期.md",
+    "wiki/concepts/rendering/ContentModifier挂载机制.md",
+    "wiki/concepts/rendering/OH_Drawing命令转换.md",
+    "wiki/concepts/rendering/SkPicture与脏区管理.md",
+    "wiki/concepts/rendering/融合渲染架构.md",
+    "wiki/analysis/platform",
+    "wiki/analysis/rendering",
+    "wiki/concepts/performance",
+    "wiki/concepts/platform",
+    "wiki/concepts/compose-basics",
+    "wiki/concepts/rendering",
+    "raw/ByteKMP_preCompose竞品分析.md",
+    "raw/揭秘 Compose 原理：图解 Composable 的本质.md",
+    "Clippings/Ghostty 终端默认快捷键列表.md",
+    "Clippings/Obsidian + GitHub + Termux 打造全平台丝滑同步工作流.md",
     "Clippings/一文看透 Kotlin 协程本质.md",
+    "Clippings/让obsidian实现更快捷操作的方案（手机端）.md",
+    "sync_pull.sh",
+    "raw/Kotlin Jetpack 实战  09. 图解协程原理.md",
     "Clippings",
     "raw/融合渲染全阶段拆解.md",
-    "wiki/analysis/analysis-FusionRenderer渲染数据流全景.md",
-    "wiki/analysis/analysis-DragAndDrop在OHOS平台的实现.md",
-    "wiki/analysis/analysis-帧时钟在两种渲染路径中的差异.md",
-    "wiki/analysis/analysis-性能优化体系.md",
-    "wiki/concepts/LazyColumn vs Column 选型决策.md",
-    "wiki/concepts/ContentModifier挂载机制.md",
-    "wiki/concepts/Composable本质.md",
-    "wiki/concepts/SideEffect机制.md",
-    "wiki/index.md",
-    "wiki/concepts/布局流程.md",
-    "wiki/concepts/图解协程原理.md",
-    "wiki/sources/src-图解协程原理.md",
-    "wiki/sources/src-深入理解LayoutModifier.md",
-    "wiki/concepts/LayoutModifier机制.md",
-    "wiki/concepts/DrawModifier机制.md",
-    "wiki/sources/src-一文看懂Compose布局流程.md",
-    "wiki/sources/src-深入理解DrawModifier.md",
-    "wiki/sources/src-揭秘Composable的本质.md",
-    "wiki/sources/src-Compose附带效应一探究竟.md",
-    "CMP融合渲染架构设计文档.md",
-    "Clippings/Kotlin Jetpack 实战  09. 图解协程原理.md",
-    "raw/一文看懂 Jetapck Compose 布局流程.md",
-    "raw/深入理解 Jetpack Compose LayoutModifier.md",
     "site/search/search_index.json",
     "site/search",
-    "site/wiki/sources/src-融合渲染整体方案总结/index.html",
-    "site/wiki/sources/src-融合渲染整体方案总结",
-    "site/wiki/sources/src-融合渲染全阶段拆解/index.html",
-    "site/wiki/sources/src-融合渲染全阶段拆解",
-    "site/wiki/sources/src-渲染模式隔离架构设计文档/index.html",
-    "site/wiki/sources/src-渲染模式隔离架构设计文档",
-    "site/wiki/sources/src-图解NodeCoordinator/index.html",
     "site/assets/images/favicon.png"
   ]
 }
