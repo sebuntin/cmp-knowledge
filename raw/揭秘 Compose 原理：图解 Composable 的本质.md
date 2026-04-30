@@ -32,7 +32,6 @@ tags:
 我们都知道，Jetpack Compose最神奇的地方就是： **可以用 Kotlin 写UI界面（无需XML）** 。而且，借助Kotlin的高阶函数特性，Compose UI界面的写法也非常的直观。
 
 ```kotlin
-体验AI代码助手 代码解读复制代码解释
 // 代码段1
 
 @Composable
@@ -57,7 +56,7 @@ fun Greeting() { // 1
 **注释2** ： `Column {}` ，请留意它的 `{}` ，我们之所以可以这样写代码，这其实是Kotlin提供的高阶函数 `简写` 。它完整的写法应该是这样的：
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段2
+// 代码段2
 
 Column(content =  {
     log(2)
@@ -82,7 +81,7 @@ Column(content =  {
 基于前面的代码，我们增加一些log：
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段3
+// 代码段3
 
 @Composable
 fun Greeting() {
@@ -123,7 +122,7 @@ com.boycoder.testcompose D/MainActivity: 4
 也许，你会觉得，上面这个例子，也不算什么，毕竟，XML也可以做到类似的事情。那么，让我们来看另外一个例子吧。
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段4
+// 代码段4
 
 @Composable
 fun Greeting() {
@@ -181,7 +180,7 @@ com.boycoder.testcompose D/MainActivity: end
 ## 四、Recompose 的原理
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段5
+// 代码段5
 
 class MainActivity : ComponentActivity() {
     // 省略
@@ -196,7 +195,7 @@ class MainActivity : ComponentActivity() {
 上面的代码很简单，Greeting()的逻辑十分简单，不过当它被反编译成Java后，它实际的逻辑会变复杂许多。
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段6
+// 代码段6
 
 public static final void Greeting(final String msg, Composer $composer,
  final int $changed) { // 多出来的changed我们以后分析吧
@@ -246,7 +245,7 @@ public static final void Greeting(final String msg, Composer $composer,
 那么，Greeting()到底是在什么样的情况下才会触发「重组」呢？我们来看一个更加完整的例子。
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段7
+// 代码段7
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -305,7 +304,7 @@ MainActivity: MainScreen end          // 重组
 让我们改动一下上面的代码：
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段8
+// 代码段8
 
 class MainActivity : ComponentActivity() {
     // 不变
@@ -356,7 +355,7 @@ MainActivity: Greeting end Modified    // 重组
 理解 Laziness 最直观的办法，就是写一段这样对比的代码：
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段9
+// 代码段9
 
 fun main() {
     val value = 1 + 2
@@ -390,7 +389,7 @@ Laziness讲清楚了，我们来看看Compose的重组「作用域」。
 总的来说，SnapShot 可以监听Compose当中State的读、写行为。
 
 ```kotlin
-体验AI代码助手 代码解读复制代码// 代码段10
+// 代码段10
 
 @Stable
 interface MutableState<T> : State<T> {
