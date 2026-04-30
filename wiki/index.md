@@ -1,7 +1,7 @@
 ---
-updated: 2026-04-28
+updated: 2026-04-30
 source_count: 23
-page_count: 56
+page_count: 57
 ---
 
 # Wiki Index
@@ -10,15 +10,17 @@ page_count: 56
 
 ## 概览
 
-| 类别 | 页面数 | 说明 |
-|------|--------|------|
-| 概念 (Concepts) | 18 | 核心概念和技术术语 |
-| 实体 (Entities) | 8 | 类、组件、模块 |
-| 源文档 (Sources) | 23 | 已录入的原始文档 |
-| 分析 (Analysis) | 7 | 对比分析、深度解读 |
-| 主题 (Topics) | 1 | 综合主题页面（含使用指南） |
+| 类别 | 子目录 | 页面数 | 说明 |
+|------|--------|--------|------|
+| 概念 (Concepts) | 4 子目录 | 19 | 核心概念和技术术语 |
+| 实体 (Entities) | — | 8 | 类、组件、模块 |
+| 源文档 (Sources) | — | 23 | 已录入的原始文档 |
+| 分析 (Analysis) | 2 子目录 | 7 | 对比分析、深度解读 |
+| 主题 (Topics) | — | 1 | 综合主题页面 |
 
 ## 概念 (Concepts)
+
+### rendering/ — 渲染管线（6 页）
 
 | 页面 | 一句话摘要 | 标签 |
 |------|-----------|------|
@@ -27,19 +29,35 @@ page_count: 56
 | [[OH_Drawing命令转换]] | Skia 绘制命令到 OHOS 原生命令的转换机制 | OH_Drawing, 命令转换 |
 | [[ContentModifier挂载机制]] | 绘制命令通过 ContentModifier 聚合到 RenderNode | ContentModifier, Picture模式, Node模式 |
 | [[RenderNode生命周期]] | OHRenderNode 的创建、复用、缓存和销毁过程 | RenderNode, 生命周期, 节点复用 |
-| [[Messenger通信机制]] | Kotlin 与 ArkTS 之间的双向 JSON 消息通信通道 | Messenger, JSON, 跨平台通信 |
-| [[SubcomposeLayout与懒组合]] | LazyColumn 核心：在测量阶段按需触发组合的机制 | SubcomposeLayout, LazyColumn, 性能 |
-| [[LazyColumn vs Column 选型决策]] | 何时选择 Column 或 LazyColumn 的决策框架 | LazyColumn, Column, 首帧性能 |
-| [[帧时钟协作机制]] | VSync 周期内按正确时序调度三类工作的协程调度系统 | 帧时钟, BroadcastFrameClock, VSync |
 | [[SkiaRenderer渲染管线]] | 自渲染路径通过 XComponent + EGL + OpenGL ES 的完整渲染管线 | SkiaRenderer, EGL, XComponent |
-| [[三明治混排结构]] | 自渲染路径中 Compose UI 与 ArkUI 原生组件的混合布局方案 | 三明治结构, InteropContainer, 挖洞 |
-| [[手势事件处理机制]] | 触摸事件从 OHOS 到 Compose 的六阶段跨语言传递与处理 | 手势事件, InputStrategy, 命中测试 |
+
+### compose-basics/ — Compose 基础（6 页）
+
+| 页面 | 一句话摘要 | 标签 |
+|------|-----------|------|
 | [[图解协程原理]] | Kotlin 协程通过 CPS 变换和状态机实现轻量级异步并发 | 协程, CPS, Continuation, 状态机 |
 | [[SideEffect机制]] | Compose Side Effect API 体系：在 Composable 生命周期内安全执行非纯 UI 操作 | SideEffect, LaunchedEffect, snapshotFlow |
 | [[Composable本质]] | @Composable 编译器插件注入 Composer 参数，使函数具备重组能力 | Composable, Composer, Recomposition, Snapshot |
 | [[DrawModifier机制]] | 通过 DrawModifierNode 接口和 NodeCoordinator 链实现绘制遍历 | DrawModifier, drawContent, NodeCoordinator |
 | [[LayoutModifier机制]] | 通过 LayoutModifierNode 和 NodeChain 双向链表实现分层测量 | LayoutModifier, NodeChain, Constraints |
 | [[布局流程]] | MeasurePolicy 三步合一测量，单次测量保证 O(n)，Intrinsic Measurement 协商尺寸 | MeasurePolicy, Constraints, IntrinsicMeasurement |
+
+### platform/ — 平台集成（3 页）
+
+| 页面 | 一句话摘要 | 标签 |
+|------|-----------|------|
+| [[Messenger通信机制]] | Kotlin 与 ArkTS 之间的双向 JSON 消息通信通道 | Messenger, JSON, 跨平台通信 |
+| [[手势事件处理机制]] | 触摸事件从 OHOS 到 Compose 的六阶段跨语言传递与处理 | 手势事件, InputStrategy, 命中测试 |
+| [[三明治混排结构]] | 自渲染路径中 Compose UI 与 ArkUI 原生组件的混合布局方案 | 三明治结构, InteropContainer, 挖洞 |
+| [[同层渲染]] | FusionRenderer 路径通过 ExternalRenderNode 将原生组件嵌入 Compose 绘制管线 | 同层渲染, ExternalRenderNode, InteropViewPainter |
+
+### performance/ — 性能与帧循环（3 页）
+
+| 页面 | 一句话摘要 | 标签 |
+|------|-----------|------|
+| [[帧时钟协作机制]] | VSync 周期内按正确时序调度三类工作的协程调度系统 | 帧时钟, BroadcastFrameClock, VSync |
+| [[SubcomposeLayout与懒组合]] | LazyColumn 核心：在测量阶段按需触发组合的机制 | SubcomposeLayout, LazyColumn, 性能 |
+| [[LazyColumn vs Column 选型决策]] | 何时选择 Column 或 LazyColumn 的决策框架 | LazyColumn, Column, 首帧性能 |
 
 ## 实体 (Entities)
 
@@ -84,15 +102,22 @@ page_count: 56
 
 ## 分析 (Analysis)
 
+### rendering/ — 渲染相关分析（4 页）
+
 | 页面 | 一句话摘要 | 标签 |
 |------|-----------|------|
-| [[analysis-DragAndDrop在OHOS平台的实现]] | DragAndDrop 功能横跨四层的完整架构分析 | DragAndDrop, OHOS, 跨平台 |
-| [[analysis-FusionRenderer与SkiaRenderer渲染路径对比]] | 两种渲染路径的架构、帧循环、Surface 管理全维度对比 | FusionRenderer, SkiaRenderer, 渲染路径 |
-| [[analysis-两种渲染路径的混排机制对比]] | 内嵌式混排 vs 叠层式混排的架构理念与能力差异 | 混排, 三明治结构, 挖洞 |
-| [[analysis-帧时钟在两种渲染路径中的差异]] | 帧时钟内核共用，外壳差异：帧触发、后台心跳、EGL 包装 | 帧时钟, VSync, 帧循环 |
 | [[analysis-FusionRenderer渲染数据流全景]] | @Composable 到像素的完整管线：五次格式转换、三层脏区传递、Picture/Node 模式决策 | 融合渲染, 渲染数据流, 管线架构 |
-| [[analysis-跨语言通信架构]] | NAPI 直接调用 / Messenger JSON / KN cinterop 三种机制的选择决策与约束 | 跨语言, NAPI, Messenger |
+| [[analysis-FusionRenderer与SkiaRenderer渲染路径对比]] | 两种渲染路径的架构、帧循环、Surface 管理全维度对比 | FusionRenderer, SkiaRenderer, 渲染路径 |
 | [[analysis-性能优化体系]] | 六项优化策略（重组跳过、Picture缓存、懒组合、脏区管理、GC抑制、栈回溯优化）的交互关系 | 性能优化, 脏区, 节点复用 |
+| [[analysis-帧时钟在两种渲染路径中的差异]] | 帧时钟内核共用，外壳差异：帧触发、后台心跳、EGL 包装 | 帧时钟, VSync, 帧循环 |
+
+### platform/ — 平台集成分析（3 页）
+
+| 页面 | 一句话摘要 | 标签 |
+|------|-----------|------|
+| [[analysis-跨语言通信架构]] | NAPI 直接调用 / Messenger JSON / KN cinterop 三种机制的选择决策与约束 | 跨语言, NAPI, Messenger |
+| [[analysis-两种渲染路径的混排机制对比]] | 内嵌式混排 vs 叠层式混排的架构理念与能力差异 | 混排, 三明治结构, 挖洞 |
+| [[analysis-DragAndDrop在OHOS平台的实现]] | DragAndDrop 功能横跨四层的完整架构分析 | DragAndDrop, OHOS, 跨平台 |
 
 ## 主题 (Topics)
 

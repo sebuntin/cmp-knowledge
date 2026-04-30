@@ -153,3 +153,30 @@
 - **新建 6 个概念页**：图解协程原理、SideEffect机制、Composable本质、DrawModifier机制、LayoutModifier机制、布局流程
 - **index.md 更新**：概念 12→18，源文档 17→23，总页数 44→56
 - 每个概念页均建立了与已有 wiki 页面的交叉引用（帧时钟协作机制、融合渲染架构等）
+
+---
+
+## [2026-04-30] lint | Wiki 目录分类整理
+
+**操作类型**: lint
+**描述**: 对 concepts/ 和 analysis/ 目录按主题建立子目录分类。
+**影响页面**: index.md, log.md, 所有 concepts/ 和 analysis/ 页面（路径变更）
+**详情**:
+- **concepts/ → 4 子目录**：rendering/（6 页：融合渲染架构、脏区管理、命令转换、ContentModifier、RenderNode生命周期、SkiaRenderer管线）、compose-basics/（6 页：协程、SideEffect、Composable本质、DrawModifier、LayoutModifier、布局流程）、platform/（3 页：Messenger、手势事件、三明治混排）、performance/（3 页：帧时钟、懒组合、选型决策）
+- **analysis/ → 2 子目录**：rendering/（4 页：数据流全景、路径对比、性能优化、帧时钟差异）、platform/（3 页：跨语言通信、混排对比、DragAndDrop）
+- **index.md 重写**：概念和分析节按子目录分组展示
+- entities/ 和 sources/ 维持扁平结构不变（实体数量适中，源文档按时间排列即可）
+
+---
+
+## [2026-04-30] query | 同层渲染实现分析
+
+**操作类型**: query（代码探索 → 概念页 + 更新分析页）
+**描述**: 通过代码探索分析 FusionRenderer 路径的同层渲染（ExternalRenderNode）实现，创建 1 个概念页，更新 2 个已有页面。
+**影响页面**: 同层渲染.md, 三明治混排结构.md, analysis-两种渲染路径的混排机制对比.md, index.md, log.md
+**详情**:
+- **新增概念页**：同层渲染（ExternalRenderNode 桥接、两种创建路径、InteropViewPainter 绘制基类、useStacked() 策略路由、坐标映射、ArkUIView/ArkUINativeView 实现）
+- **更新三明治混排结构**：添加局限性说明，指出三明治仅适用于 SkiaRenderer，FusionRenderer 使用同层渲染
+- **更新混排机制对比**：结论改为 FusionRenderer 同层渲染优先、旧设备回退叠层；FusionRenderer 架构图从内嵌式改为 ExternalRenderNode 同层渲染；混排能力对比表从 2 列扩展为 3 列（同层/叠层/SkiaRenderer）；更新通信机制对比
+- **index.md 更新**：概念 18→19，总页数 56→57
+- 来源：代码分析（非 raw/ 源文档），基于直接阅读 Kotlin、ArkTS 和 C++ 源码
