@@ -41,9 +41,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-docs_dir: docs
-site_dir: site
-
 plugins:
   - search:
       lang:
@@ -84,57 +81,92 @@ markdown_extensions:
 nav:
   - 首页: README.md
   - 概念:
-    - wiki/concepts/融合渲染架构.md
-    - wiki/concepts/SkPicture与脏区管理.md
-    - wiki/concepts/OH_Drawing命令转换.md
-    - wiki/concepts/ContentModifier挂载机制.md
-    - wiki/concepts/RenderNode生命周期.md
-    - wiki/concepts/Messenger通信机制.md
-    - wiki/concepts/SubcomposeLayout与懒组合.md
-    - wiki/concepts/LazyColumn vs Column 选型决策.md
-    - wiki/concepts/帧时钟协作机制.md
-    - wiki/concepts/SkiaRenderer渲染管线.md
-    - wiki/concepts/三明治混排结构.md
+    - 渲染:
+      - 融合渲染架构: wiki/concepts/rendering/融合渲染架构.md
+      - SkPicture与脏区管理: wiki/concepts/rendering/SkPicture与脏区管理.md
+      - OH_Drawing命令转换: wiki/concepts/rendering/OH_Drawing命令转换.md
+      - ContentModifier挂载机制: wiki/concepts/rendering/ContentModifier挂载机制.md
+      - RenderNode生命周期: wiki/concepts/rendering/RenderNode生命周期.md
+      - SkiaRenderer渲染管线: wiki/concepts/rendering/SkiaRenderer渲染管线.md
+    - Compose基础:
+      - Composable本质: wiki/concepts/compose-basics/Composable本质.md
+      - 布局流程: wiki/concepts/compose-basics/布局流程.md
+      - 图解协程原理: wiki/concepts/compose-basics/图解协程原理.md
+      - DrawModifier机制: wiki/concepts/compose-basics/DrawModifier机制.md
+      - LayoutModifier机制: wiki/concepts/compose-basics/LayoutModifier机制.md
+      - SideEffect机制: wiki/concepts/compose-basics/SideEffect机制.md
+    - 平台:
+      - 三明治混排结构: wiki/concepts/platform/三明治混排结构.md
+      - Messenger通信机制: wiki/concepts/platform/Messenger通信机制.md
+      - 手势事件处理机制: wiki/concepts/platform/手势事件处理机制.md
+      - 同层渲染: wiki/concepts/platform/同层渲染.md
+    - 性能:
+      - 帧时钟协作机制: wiki/concepts/performance/帧时钟协作机制.md
+      - SubcomposeLayout与懒组合: wiki/concepts/performance/SubcomposeLayout与懒组合.md
+      - LazyColumn vs Column 选型决策: wiki/concepts/performance/LazyColumn vs Column 选型决策.md
   - 实体:
-    - wiki/entities/OHRenderNode.md
-    - wiki/entities/SkPictureRecorder.md
-    - wiki/entities/SkCanvas.md
-    - wiki/entities/ComposeSceneDragAndDropNode.md
-    - wiki/entities/HarmonyOSDragAndDropManager.md
-    - wiki/entities/DragAndDropProxy.md
-    - wiki/entities/ComposeSceneRender.md
-    - wiki/entities/XComponentRender.md
+    - OHRenderNode: wiki/entities/OHRenderNode.md
+    - SkPictureRecorder: wiki/entities/SkPictureRecorder.md
+    - SkCanvas: wiki/entities/SkCanvas.md
+    - ComposeSceneDragAndDropNode: wiki/entities/ComposeSceneDragAndDropNode.md
+    - HarmonyOSDragAndDropManager: wiki/entities/HarmonyOSDragAndDropManager.md
+    - DragAndDropProxy: wiki/entities/DragAndDropProxy.md
+    - ComposeSceneRender: wiki/entities/ComposeSceneRender.md
+    - XComponentRender: wiki/entities/XComponentRender.md
   - 源文档摘要:
-    - wiki/sources/src-CMP融合渲染架构设计文档.md
-    - wiki/sources/src-Canvas生命周期详解.md
-    - wiki/sources/src-Coil图片解码与零拷贝优化方案.md
-    - wiki/sources/src-coil+skia自渲染解码原理.md
-    - wiki/sources/src-ComposeUI与ArkUI混排原理.md
-    - wiki/sources/src-applyChanges_unwind_backtrace_analysis.md
-    - wiki/sources/src-图解NodeCoordinator.md
-    - wiki/sources/src-渲染模式隔离架构设计文档.md
-    - wiki/sources/src-融合渲染全阶段拆解.md
-    - wiki/sources/src-融合渲染整体方案总结.md
-    - wiki/sources/src-LazyColumn与Column原理及性能对比分析.md
-    - wiki/sources/src-CMP帧时钟协作机制.md
-    - wiki/sources/src-OHOS SkiaRenderer渲染管线设计.md
-    - wiki/sources/src-自渲染ArkUI原生组件混排设计.md
+    - CMP融合渲染架构设计文档: wiki/sources/src-CMP融合渲染架构设计文档.md
+    - Canvas生命周期详解: wiki/sources/src-Canvas生命周期详解.md
+    - Coil图片解码与零拷贝优化方案: wiki/sources/src-Coil图片解码与零拷贝优化方案.md
+    - coil+skia自渲染解码原理: wiki/sources/src-coil+skia自渲染解码原理.md
+    - ComposeUI与ArkUI混排原理: wiki/sources/src-ComposeUI与ArkUI混排原理.md
+    - applyChanges unwind backtrace分析: wiki/sources/src-applyChanges_unwind_backtrace_analysis.md
+    - 图解NodeCoordinator: wiki/sources/src-图解NodeCoordinator.md
+    - 渲染模式隔离架构设计文档: wiki/sources/src-渲染模式隔离架构设计文档.md
+    - 融合渲染全阶段拆解: wiki/sources/src-融合渲染全阶段拆解.md
+    - 融合渲染整体方案总结: wiki/sources/src-融合渲染整体方案总结.md
+    - LazyColumn与Column原理及性能对比分析: wiki/sources/src-LazyColumn与Column原理及性能对比分析.md
+    - CMP帧时钟协作机制: wiki/sources/src-CMP帧时钟协作机制.md
+    - OHOS SkiaRenderer渲染管线设计: wiki/sources/src-OHOS SkiaRenderer渲染管线设计.md
+    - 自渲染ArkUI原生组件混排设计: wiki/sources/src-自渲染ArkUI原生组件混排设计.md
+    - 图解协程原理: wiki/sources/src-图解协程原理.md
+    - 揭秘Composable的本质: wiki/sources/src-揭秘Composable的本质.md
+    - Compose OHOS手势事件处理剖析: wiki/sources/src-Compose_OHOS_手势事件处理剖析.md
+    - 一文看懂Compose布局流程: wiki/sources/src-一文看懂Compose布局流程.md
+    - Compose附带效应一探究竟: wiki/sources/src-Compose附带效应一探究竟.md
+    - 深入理解DrawModifier: wiki/sources/src-深入理解DrawModifier.md
+    - 深入理解LayoutModifier: wiki/sources/src-深入理解LayoutModifier.md
+    - MonotonicFrameClock Injection Chain: wiki/sources/src-MonotonicFrameClock_Injection_Chain.md
+    - CMP鸿蒙化规范对齐模板: wiki/sources/src-CMP鸿蒙化规范对齐模板.md
   - 分析:
-    - wiki/analysis/analysis-DragAndDrop在OHOS平台的实现.md
-    - wiki/analysis/analysis-FusionRenderer与SkiaRenderer渲染路径对比.md
-    - wiki/analysis/analysis-两种渲染路径的混排机制对比.md
-    - wiki/analysis/analysis-帧时钟在两种渲染路径中的差异.md
+    - DragAndDrop在OHOS平台的实现: wiki/analysis/platform/analysis-DragAndDrop在OHOS平台的实现.md
+    - FusionRenderer与SkiaRenderer渲染路径对比: wiki/analysis/rendering/analysis-FusionRenderer与SkiaRenderer渲染路径对比.md
+    - 两种渲染路径的混排机制对比: wiki/analysis/platform/analysis-两种渲染路径的混排机制对比.md
+    - 帧时钟在两种渲染路径中的差异: wiki/analysis/rendering/analysis-帧时钟在两种渲染路径中的差异.md
+    - 跨语言通信架构: wiki/analysis/platform/analysis-跨语言通信架构.md
+    - 性能优化体系: wiki/analysis/rendering/analysis-性能优化体系.md
+    - FusionRenderer渲染数据流全景: wiki/analysis/rendering/analysis-FusionRenderer渲染数据流全景.md
   - 原始文档:
-    - raw/CMP帧时钟协作机制.md
-    - raw/Canvas生命周期详解.md
-    - raw/Coil图片解码与零拷贝优化方案.md
-    - raw/coil+skia自渲染解码原理.md
-    - raw/ComposeUI与ArkUI混排原理.md
-    - raw/applyChanges_unwind_backtrace_analysis.md
-    - raw/图解NodeCoordinator.md
-    - raw/渲染模式隔离架构设计文档.md
-    - raw/融合渲染全阶段拆解.md
-    - raw/融合渲染整体方案总结.md
-    - raw/LazyColumn 与 Column 原理及性能对比分析.md
-    - raw/OHOS SkiaRenderer渲染管线设计.md
-    - raw/自渲染ArkUI原生组件混排设计.md
+    - CMP帧时钟协作机制: raw/CMP帧时钟协作机制.md
+    - Canvas生命周期详解: raw/Canvas生命周期详解.md
+    - Coil图片解码与零拷贝优化方案: raw/Coil图片解码与零拷贝优化方案.md
+    - coil+skia自渲染解码原理: raw/coil+skia自渲染解码原理.md
+    - ComposeUI与ArkUI混排原理: raw/ComposeUI与ArkUI混排原理.md
+    - applyChanges unwind backtrace分析: raw/applyChanges_unwind_backtrace_analysis.md
+    - 图解NodeCoordinator: raw/图解NodeCoordinator.md
+    - 渲染模式隔离架构设计文档: raw/渲染模式隔离架构设计文档.md
+    - 融合渲染全阶段拆解: raw/融合渲染全阶段拆解.md
+    - 融合渲染整体方案总结: raw/融合渲染整体方案总结.md
+    - LazyColumn与Column原理及性能对比分析: raw/LazyColumn 与 Column 原理及性能对比分析.md
+    - OHOS SkiaRenderer渲染管线设计: raw/OHOS SkiaRenderer渲染管线设计.md
+    - 自渲染ArkUI原生组件混排设计: raw/自渲染ArkUI原生组件混排设计.md
+    - 揭秘Compose原理图解Composable的本质: raw/揭秘 Compose 原理：图解 Composable 的本质.md
+    - 一文看懂Jetpack Compose布局流程: raw/一文看懂 Jetapck Compose 布局流程.md
+    - 深入理解Jetpack Compose DrawModifier: raw/深入理解 Jetpack Compose DrawModifier.md
+    - 深入理解Jetpack Compose LayoutModifier: raw/深入理解 Jetpack Compose LayoutModifier.md
+    - Compose OHOS手势事件处理剖析: raw/Compose_OHOS_手势事件处理剖析.md
+    - 带着问题学Compose附带效应: raw/带着问题学，Compose附带效应(Side Effect)一探究竟.md
+    - Kotlin Jetpack实战图解协程原理: raw/Kotlin Jetpack 实战  09. 图解协程原理.md
+    - MonotonicFrameClock Injection Chain: raw/MonotonicFrameClock_Injection_Chain.md
+    - ByteKMP preCompose竞品分析: raw/ByteKMP_preCompose竞品分析.md
+    - runRecomposeAndApplyChanges详解: raw/runRecomposeAndApplyChanges详解.md
+    - Snapshot系统与Recomposer协作机制详解: raw/Snapshot系统与Recomposer协作机制详解.md
