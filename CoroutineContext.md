@@ -42,8 +42,8 @@ Key：`ContinuationInterceptor.Key`
 作用：控制协程代码在哪个线程执行。它是所有调度机制的底层抽象。
 
 介入时机：
-- 协程启动时：包装原始 `Continuation` 为 `DispatchedContinuation`
-- 每次挂起恢复时：通过 `interceptContinuation` 决定是否需要 `dispatch` 到目标线程
+- **协程启动时**：包装原始 `Continuation` 为 `DispatchedContinuation`
+- **每次挂起恢复时**：通过 `interceptContinuation` 决定是否需要 `dispatch` 到目标线程
 
 ```kotlin
 // 核心机制
@@ -68,10 +68,10 @@ Key：`Job.Key`
 作用：管理协程的生命周期、父子关系、取消传播。
 
 介入时机：
-- 协程启动时：子 Job 注册到父 Job 的 `children` 列表
-- 每次挂起点：检查 `isActive`，若已取消则抛出 `CancellationException`
-- 取消信号发出时：递归通知所有子 Job，中断挂起的 Continuation
-- 协程完成时：从父 Job 解除绑定，触发 `invokeOnCompletion` 回调
+- **协程启动时**：子 Job 注册到父 Job 的 `children` 列表
+- **每次挂起点**：检查 `isActive`，若已取消则抛出 `CancellationException`
+- **取消信号发出时**：递归通知所有子 Job，中断挂起的 Continuation
+- **协程完成时**：从父 Job 解除绑定，触发 `invokeOnCompletion` 回调
 
 ```kotlin
 // 协程启动时的父子绑定

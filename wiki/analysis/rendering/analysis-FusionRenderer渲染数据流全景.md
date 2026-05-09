@@ -60,10 +60,10 @@ OHRenderNode.nodeDraw() / doRedraw()
     │  Picture vs Node 模式决策
     ▼
 ┌─────────────────────────────────────┐
-│ Picture 模式                         │  Node 模式
-│ OH_Drawing_CanvasDrawRecordCmdNesting │  generateNewNode()
+│ Picture 模式                        │ Node 模式
+│ OH_Drawing_CanvasDrawRecordCmdNesting│ generateNewNode()
 │ 命令直接聚合到父节点 ContentModifier   │  appendChild → ContentModifier 挂载
-│ Canvas = 当前录制 Canvas              │  Canvas = ContentModifier 执行上下文
+│ Canvas = 当前录制 Canvas             │ Canvas = ContentModifier 执行上下文
 └─────────────────────────────────────┘
     │
     ▼
@@ -77,13 +77,14 @@ OHOS RenderService 硬件加速渲染
 
 数据在管线中经历了 5 次格式转换，每一层都改变了数据的表示形式：
 
-| 层 | 输入格式 | 处理 | 输出格式 | 负责组件 |
-|----|---------|------|---------|---------|
-| Compose | `@Composable` DSL | 重组 + applyChanges | LayoutNode 树 | Recomposer |
-| Layer | LayoutNode 绘制请求 | PictureRecorder 录制 | SkPicture | RenderNodeLayer |
-| 录制 | Skia 绘制 API | 实时命令转换 + 脏区累计 | OH_Drawing_RecordCmd + SkRect | SkCanvas |
-| 回放 | RecordCmd + 脏区 | Picture/Node 模式决策 | ContentModifier 挂载 | OHRenderNode |
-| 渲染 | ContentModifier 内容 | 硬件加速执行 | 像素 | RenderService |
+| 层       | 输入格式               | 处理                 | 输出格式                          | 负责组件            |
+| ------- | ------------------ | ------------------ | ----------------------------- | --------------- |
+| Compose | `@Composable` DSL  | 重组 + applyChanges  | LayoutNode 树                  | Recomposer      |
+| Layer   | LayoutNode 绘制请求    | PictureRecorder 录制 | SkPicture                     | RenderNodeLayer |
+| 录制      | Skia 绘制 API        | 实时命令转换 + 脏区累计      | OH_Drawing_RecordCmd + SkRect | SkCanvas        |
+| 回放      | RecordCmd + 脏区     | Picture/Node 模式决策  | ContentModifier 挂载            | OHRenderNode    |
+| 渲染      | ContentModifier 内容 | 硬件加速执行             | 像素                            | RenderService   |
+|         |                    |                    |                               |                 |
 
 **核心洞察**：录制层（SkCanvas）是唯一同时完成两个任务的层——命令格式转换（Skia→OH_Drawing）和脏区累计（markDrawBounds）。这种"边录制边转换"的设计避免了后处理开销。
 

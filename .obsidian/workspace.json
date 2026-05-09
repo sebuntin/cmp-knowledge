@@ -11,14 +11,14 @@
             "id": "af7330a9eecc6e7d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
-                "mode": "source",
-                "source": false
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "Ghostty 终端默认快捷键列表"
+              "icon": "diff",
+              "title": "Diff: workspace.json  (Working Tree)"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Intercept",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,11 +74,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 444.5
+    "width": 359.5
   },
   "right": {
     "id": "317f2ad09f0fd6f8",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
+                "file": "raw/带着问题学，Compose附带效应(Side Effect)一探究竟.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ghostty 终端默认快捷键列表"
+              "title": "Backlinks for 带着问题学，Compose附带效应(Side Effect)一探究竟"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
+                "file": "raw/带着问题学，Compose附带效应(Side Effect)一探究竟.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Ghostty 终端默认快捷键列表"
+              "title": "Outgoing links from 带着问题学，Compose附带效应(Side Effect)一探究竟"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Clippings/Ghostty 终端默认快捷键列表.md",
+                "file": "raw/带着问题学，Compose附带效应(Side Effect)一探究竟.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ghostty 终端默认快捷键列表"
+              "title": "Outline of 带着问题学，Compose附带效应(Side Effect)一探究竟"
             }
           },
           {
@@ -215,42 +216,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c1bde05e44d3b46c",
+  "active": "af7330a9eecc6e7d",
   "lastOpenFiles": [
+    "Clippings/一文看透 Kotlin 协程本质.md",
+    "CoroutineContext.md",
+    "raw/OHOS平台单元测试详细指导.md",
+    "raw/图解NodeCoordinator.md",
+    "raw/Untitled.md",
+    "wiki/analysis/rendering/analysis-帧时钟在两种渲染路径中的差异.md",
+    "raw/MonotonicFrameClock_Injection_Chain.md",
+    "raw/CMP帧时钟协作机制.md",
+    "raw/带着问题学，Compose附带效应(Side Effect)一探究竟.md",
+    "Clippings/Obsidian + GitHub + Termux 打造全平台丝滑同步工作流.md",
+    "wiki/concepts/compose-basics/图解协程原理.md",
+    "wiki/concepts/compose-basics/Composable本质.md",
+    "wiki/sources/src-揭秘Composable的本质.md",
+    "wiki/sources/src-Compose附带效应一探究竟.md",
+    "wiki/analysis/rendering/analysis-性能优化体系.md",
+    "wiki/analysis/rendering/analysis-FusionRenderer渲染数据流全景.md",
+    "wiki/analysis/rendering/analysis-FusionRenderer与SkiaRenderer渲染路径对比.md",
+    "wiki/analysis/platform/analysis-两种渲染路径的混排机制对比.md",
+    "wiki/concepts/compose-basics/SideEffect机制.md",
+    "wiki/entities/SkCanvas.md",
+    "wiki/concepts/platform/同层渲染.md",
+    "Clippings/Ghostty 终端默认快捷键列表.md",
+    "wiki/analysis/platform/analysis-DragAndDrop在OHOS平台的实现.md",
+    "wiki/analysis/platform/analysis-跨语言通信架构.md",
     "wiki/concepts/performance/LazyColumn vs Column 选型决策.md",
     "wiki/concepts/performance/SubcomposeLayout与懒组合.md",
-    "wiki/concepts/performance/帧时钟协作机制.md",
-    "wiki/concepts/platform/三明治混排结构.md",
-    "wiki/concepts/platform/手势事件处理机制.md",
-    "wiki/concepts/platform/Messenger通信机制.md",
-    "wiki/concepts/compose-basics/布局流程.md",
-    "wiki/concepts/compose-basics/LayoutModifier机制.md",
-    "wiki/concepts/compose-basics/DrawModifier机制.md",
-    "wiki/concepts/compose-basics/Composable本质.md",
-    "wiki/concepts/compose-basics/SideEffect机制.md",
-    "wiki/concepts/compose-basics/图解协程原理.md",
-    "wiki/concepts/rendering/SkiaRenderer渲染管线.md",
-    "wiki/concepts/rendering/RenderNode生命周期.md",
-    "wiki/concepts/rendering/ContentModifier挂载机制.md",
-    "wiki/concepts/rendering/OH_Drawing命令转换.md",
-    "wiki/concepts/rendering/SkPicture与脏区管理.md",
-    "wiki/concepts/rendering/融合渲染架构.md",
     "wiki/analysis/platform",
     "wiki/analysis/rendering",
     "wiki/concepts/performance",
     "wiki/concepts/platform",
     "wiki/concepts/compose-basics",
     "wiki/concepts/rendering",
-    "raw/ByteKMP_preCompose竞品分析.md",
-    "raw/揭秘 Compose 原理：图解 Composable 的本质.md",
-    "Clippings/Ghostty 终端默认快捷键列表.md",
-    "Clippings/Obsidian + GitHub + Termux 打造全平台丝滑同步工作流.md",
-    "Clippings/一文看透 Kotlin 协程本质.md",
-    "Clippings/让obsidian实现更快捷操作的方案（手机端）.md",
     "sync_pull.sh",
-    "raw/Kotlin Jetpack 实战  09. 图解协程原理.md",
     "Clippings",
-    "raw/融合渲染全阶段拆解.md",
     "site/search/search_index.json",
     "site/search",
     "site/assets/images/favicon.png"
