@@ -1,18 +1,42 @@
 /* Fix overscroll: prevent blank area when scrolling past content */
+html {
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+.md-container {
+  overflow: hidden;
+  height: 100%;
+}
+
 .md-main {
   overflow: hidden;
+  flex: 1 1 0;
 }
 
 .md-main__inner {
-  min-height: auto;
-  overflow-y: auto;
+  height: 100%;
+  overflow: hidden;
 }
 
 .md-content {
   overflow-y: auto;
+  overscroll-behavior-y: contain;
+  height: 100%;
 }
 
-/* Prevent elastic overscroll on body */
-body {
-  overscroll-behavior-y: none;
+.md-content__inner {
+  margin-bottom: 0;
+}
+
+/* Remove default min-height that extends past viewport */
+.md-main__inner.md-grid {
+  min-height: 0;
 }
