@@ -8,6 +8,7 @@ edit_uri: edit/main/
 theme:
   name: material
   language: zh
+  custom_dir: overrides
   features:
     - navigation.instant
     - navigation.tracking
@@ -77,6 +78,9 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - 首页: README.md

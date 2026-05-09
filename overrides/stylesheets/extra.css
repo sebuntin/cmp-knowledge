@@ -1,0 +1,18 @@
+/* Fix overscroll: prevent blank area when scrolling past content */
+.md-main {
+  overflow: hidden;
+}
+
+.md-main__inner {
+  min-height: auto;
+  overflow-y: auto;
+}
+
+.md-content {
+  overflow-y: auto;
+}
+
+/* Prevent elastic overscroll on body */
+body {
+  overscroll-behavior-y: none;
+}
