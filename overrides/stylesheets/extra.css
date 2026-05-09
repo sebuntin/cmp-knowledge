@@ -1,43 +1,16 @@
-/* ===== Fix overscroll: lock scrolling to content area only ===== */
+/* ===== Fix overscroll: prevent elastic bounce and scroll overflow ===== */
 
-html, body {
-  height: 100%;
-  overflow: hidden;
+/* Prevent overscroll bounce on the root element */
+html {
   overscroll-behavior: none;
 }
 
-.md-container {
-  height: 100%;
-  overflow: hidden;
-}
-
-.md-main {
-  overflow: hidden;
-  flex: 1 1 0;
-}
-
-/* Remove default min-height that stretches past viewport */
-.md-main__inner {
-  min-height: 0 !important;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* The only scrollable element */
-.md-content {
-  overflow-y: auto !important;
-  overscroll-behavior-y: contain;
-  height: 100%;
-}
-
-/* Kill the massive padding-bottom (used for footer spacing in default theme) */
+/* Reduce the large bottom padding that creates empty scrollable space */
 .md-content__inner {
-  padding-bottom: 0.4rem !important;
-  margin-bottom: 0 !important;
+  padding-bottom: 0.8rem !important;
 }
 
-/* Footer should not add to scroll height */
+/* Ensure footer doesn't push content creating extra scroll space */
 .md-footer {
-  position: relative;
-  flex-shrink: 0;
+  margin-top: 0;
 }
