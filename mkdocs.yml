@@ -50,6 +50,9 @@ plugins:
       separator: '[\s\-\.]+'
   - tags
 
+hooks:
+  - hooks/wikilinks.py
+
 markdown_extensions:
   - admonition
   - attr_list
