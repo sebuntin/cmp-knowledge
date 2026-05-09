@@ -1,16 +1,11 @@
 /* ===== Fix overscroll: prevent elastic bounce and scroll overflow ===== */
 
-/* Prevent overscroll bounce on the root element */
+/* Prevent overscroll bounce on root */
 html {
   overscroll-behavior: none;
 }
 
-/* Reduce the large bottom padding that creates empty scrollable space */
+/* Remove excessive bottom margin on content that creates empty scroll space */
 .md-content__inner {
-  padding-bottom: 0.8rem !important;
-}
-
-/* Ensure footer doesn't push content creating extra scroll space */
-.md-footer {
-  margin-top: 0;
+  margin-bottom: 0 !important;
 }

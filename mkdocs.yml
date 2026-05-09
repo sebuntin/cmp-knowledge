@@ -10,7 +10,6 @@ theme:
   language: zh
   custom_dir: overrides
   features:
-    - navigation.instant
     - navigation.tracking
     - navigation.tabs
     - navigation.sections

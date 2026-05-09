@@ -10,7 +10,7 @@ import re
 
 WIKILINK_RE = re.compile(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]')
 
-# Global link map: wikilink_target -> relative URL path (no leading /, no trailing /)
+# Global link map: wikilink_target -> URL path (same namespace as dest_path minus suffix)
 LINK_MAP = {}
 
 
@@ -23,31 +23,33 @@ def on_nav(nav, config, files):
     return nav
 
 
+def _dest_to_url(dest):
+    """Convert MkDocs dest_path to URL path segment.
+
+    dest_path: 'wiki/concepts/rendering/融合渲染架构/index.html'
+    returns:   'wiki/concepts/rendering/融合渲染架构'
+    """
+    if dest.endswith("/index.html"):
+        return dest[:-len("/index.html")]
+    if dest.endswith(".html"):
+        return dest[:-5]
+    return dest
+
+
 def _process_nav_item(item):
-    """Process a nav item recursively to build the wikilink -> URL map."""
     from mkdocs.structure.nav import Page, Section
 
     if isinstance(item, Page):
         if item.file:
-            src_path = item.file.src_path
-            # dest_path is like "wiki/concepts/rendering/融合渲染架构/index.html"
-            dest = item.file.dest_path
-            # Strip "wiki/" prefix and "/index.html" suffix to get URL path
-            if dest.startswith("wiki/"):
-                dest = dest[len("wiki/"):]
-            if dest.endswith("/index.html"):
-                dest = dest[:-len("/index.html")]
-            elif dest.endswith(".html"):
-                dest = dest[:-5]
+            url = _dest_to_url(item.file.dest_path)
+            basename = os.path.splitext(os.path.basename(item.file.src_path))[0]
 
-            basename = os.path.splitext(os.path.basename(src_path))[0]
-            LINK_MAP[basename] = dest
+            LINK_MAP[basename] = url
 
-            # Register short name (without src-/analysis- prefix)
             if basename.startswith("src-"):
-                LINK_MAP[basename[4:]] = dest
+                LINK_MAP[basename[4:]] = url
             elif basename.startswith("analysis-"):
-                LINK_MAP[basename[9:]] = dest
+                LINK_MAP[basename[9:]] = url
 
     elif isinstance(item, Section):
         for child in item.children:
@@ -59,13 +61,17 @@ def on_page_markdown(markdown, page, config, files):
     if not LINK_MAP:
         return markdown
 
+    # Current page's full URL path (including page slug as directory)
+    # e.g. 'wiki/concepts/rendering/融合渲染架构'
+    current_url = _dest_to_url(page.file.dest_path)
+
     def replace_wikilink(match):
         target = match.group(1).strip()
         display = match.group(2) or target
 
         url = LINK_MAP.get(target)
 
-        # Fallback: try with prefixes
+        # Fallback: try with common prefixes
         if url is None:
             for prefix in ["src-", "analysis-",
                            "concepts/rendering/", "concepts/compose-basics/",
@@ -80,17 +86,8 @@ def on_page_markdown(markdown, page, config, files):
         if url is None:
             return f'[{display}](#)'
 
-        # Compute relative path from current page to target
-        current_src = page.file.src_path
-        if current_src.startswith("wiki/"):
-            current_src = current_src[len("wiki/"):]
-        current_dir = os.path.dirname(current_src)
-
-        if current_dir:
-            parts = [".."] * current_dir.count("/") if current_dir else []
-            rel = "/".join(parts) + "/" + url if parts else url
-        else:
-            rel = url
+        # os.path.relpath correctly handles all directory levels
+        rel = os.path.relpath(url, current_url)
 
         return f'[{display}]({rel}/)'
 
