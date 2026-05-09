@@ -1,19 +1,14 @@
-/* Fix overscroll: prevent blank area when scrolling past content */
-html {
-  overscroll-behavior: none;
-  overflow: hidden;
-  height: 100%;
-}
+/* ===== Fix overscroll: lock scrolling to content area only ===== */
 
-body {
-  overscroll-behavior: none;
-  overflow: hidden;
+html, body {
   height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 .md-container {
-  overflow: hidden;
   height: 100%;
+  overflow: hidden;
 }
 
 .md-main {
@@ -21,22 +16,28 @@ body {
   flex: 1 1 0;
 }
 
+/* Remove default min-height that stretches past viewport */
 .md-main__inner {
+  min-height: 0 !important;
   height: 100%;
   overflow: hidden;
 }
 
+/* The only scrollable element */
 .md-content {
-  overflow-y: auto;
+  overflow-y: auto !important;
   overscroll-behavior-y: contain;
   height: 100%;
 }
 
+/* Kill the massive padding-bottom (used for footer spacing in default theme) */
 .md-content__inner {
-  margin-bottom: 0;
+  padding-bottom: 0.4rem !important;
+  margin-bottom: 0 !important;
 }
 
-/* Remove default min-height that extends past viewport */
-.md-main__inner.md-grid {
-  min-height: 0;
+/* Footer should not add to scroll height */
+.md-footer {
+  position: relative;
+  flex-shrink: 0;
 }

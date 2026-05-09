@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+document$.subscribe(function() {
+  var content = document.querySelector('.md-content');
+  if (content) {
+    content.scrollTop = 0;
+  }
+});
+</script>
+{% endblock %}
